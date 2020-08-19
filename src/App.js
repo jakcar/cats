@@ -30,7 +30,7 @@ function App() {
               <NavLink
                 className="link"
                 activeClassName="link-active"
-                to="/filter"
+                to="/cats/filter"
               >
                 Filtrera
               </NavLink>
@@ -41,7 +41,7 @@ function App() {
           <Route exact path="/cats">
             <RandomCats initialValue={1} />
           </Route>
-          <Route path="/filter">
+          <Route path="/cats/filter">
             <CatForm />
           </Route>
         </Switch>
