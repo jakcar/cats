@@ -1,0 +1,34 @@
+.App {
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  list-style-type: none;
+  margin-right: 35px;
+}
+
+.nav-option {
+  margin: 0 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover {
+  color: grey;
+}
+
+.link-active {
+  color: green;
+  /* text-decoration: underline; */
+}
+
+.link-active:hover {
+  color: darkgreen;
+}

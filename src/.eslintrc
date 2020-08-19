@@ -1,0 +1,12 @@
+{
+  "env": { "browser": true, "node": true },
+  "extends": ["eslint:recommended"],
+  "globals": { "Vue": "readonly", "VueRouter": "readonly", "Vuex": "readonly" },
+  "parserOptions": { "ecmaVersion": 8, "sourceType": "module" },
+  "rules": {
+    "no-console": 1,
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "semi": [2, "never"],
+    "sort-keys": ["error", "asc"]
+  }
+}
