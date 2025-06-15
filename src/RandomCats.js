@@ -36,6 +36,11 @@ const RandomCats = () => {
       });
   }, [value, category]);
 
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
+    setValue(value + 1);
+  };
+
   return (
     <div className="random-cats-container">
       <div className="controls">
@@ -44,7 +49,7 @@ const RandomCats = () => {
           <select
             id="category-select"
             value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={handleCategoryChange}
             className="category-select"
           >
             {categories.map((cat) => (
