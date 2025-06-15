@@ -88,6 +88,15 @@ main {
   box-shadow: 0 -4px 20px var(--shadow-color);
 }
 
+.app-footer p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.app-footer p:first-child {
+  margin-bottom: 0.8rem;
+}
+
 .app-footer a {
   color: var(--text-color);
   text-decoration: none;
@@ -97,6 +106,15 @@ main {
 
 .app-footer a:hover {
   opacity: 0.8;
+}
+
+.react-icon {
+  display: inline-block;
+  font-size: 1.2em;
+  vertical-align: -0.1em;
+  margin: 0 0.2rem;
+  position: relative;
+  top: -0.05em;
 }
 
 @media (max-width: 768px) {
@@ -114,6 +132,10 @@ main {
 
   .subtitle {
     font-size: 1.1rem;
+  }
+
+  .app-footer p {
+    font-size: 0.9rem;
   }
 }
 

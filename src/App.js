@@ -27,6 +27,20 @@ function App() {
             The Cat API
           </a>
         </p>
+        <p>
+          Built using{" "}
+          <span className="react-icon" title="React">
+            ⚛
+          </span>{" "}
+          by{" "}
+          <a
+            href="https://jakobcarlbring.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Jakob Carlbring
+          </a>
+        </p>
       </footer>
     </div>
   );
