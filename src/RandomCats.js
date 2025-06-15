@@ -14,7 +14,8 @@ const RandomCats = () => {
     { value: "1", label: "Katt i hatt" },
     { value: "14", label: "Katt i handfat" },
     { value: "2", label: "Katt i rymden" },
-    { value: "7", label: "Katt i slips" },
+    { value: "7", label: "Katt i slips/fluga" },
+    { value: "9", label: "Katt i dröm" },
   ];
 
   useEffect(() => {
