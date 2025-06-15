@@ -6,7 +6,9 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>🐱 Välkommen till Katthörnan!</h1>
+        <h1>
+          <span className="emoji">🐱</span> Välkommen till Katthörnan!
+        </h1>
         <p className="subtitle">Spinn iväg.</p>
       </header>
 
@@ -15,7 +17,16 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <p>Made with ❤️ using The Cat API</p>
+        <p>
+          Made with ❤️ using{" "}
+          <a
+            href="https://thecatapi.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            The Cat API
+          </a>
+        </p>
       </footer>
     </div>
   );

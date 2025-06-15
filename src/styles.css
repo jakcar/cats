@@ -46,6 +46,18 @@ body {
   font-weight: 700;
   margin-bottom: 0.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.app-header h1 .emoji {
+  font-size: 2.5rem;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .subtitle {
@@ -76,6 +88,17 @@ main {
   box-shadow: 0 -4px 20px var(--shadow-color);
 }
 
+.app-footer a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.app-footer a:hover {
+  opacity: 0.8;
+}
+
 @media (max-width: 768px) {
   .app-header {
     padding: 2rem 1rem;
@@ -85,7 +108,25 @@ main {
     font-size: 2.5rem;
   }
 
+  .app-header h1 .emoji {
+    font-size: 2rem;
+  }
+
   .subtitle {
     font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .app-header h1 .emoji {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
   }
 }
