@@ -152,3 +152,62 @@ main {
     font-size: 1rem;
   }
 }
+
+/* Cookie Notice Styles */
+.cookie-notice {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--text-color);
+  padding: 1rem 2rem;
+  box-shadow: 0 -4px 20px var(--shadow-color);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cookie-notice p {
+  margin: 0;
+  flex: 1;
+  min-width: 300px;
+  line-height: 1.4;
+}
+
+.cookie-accept-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: var(--text-color);
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.cookie-accept-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .cookie-notice {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cookie-notice p {
+    min-width: auto;
+  }
+}

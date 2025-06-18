@@ -1,8 +1,24 @@
 import "./styles.css";
 import RandomCats from "./RandomCats";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { getCookie, setCookie } from "./utils/cookies";
 
 function App() {
+  const [showCookieNotice, setShowCookieNotice] = useState(false);
+
+  useEffect(() => {
+    // Check if user has already seen the cookie notice
+    const hasSeenNotice = getCookie("cookieNoticeSeen");
+    if (!hasSeenNotice) {
+      setShowCookieNotice(true);
+    }
+  }, []);
+
+  const handleAcceptCookies = () => {
+    setCookie("cookieNoticeSeen", "true", 365);
+    setShowCookieNotice(false);
+  };
+
   return (
     <div className="app">
       <header className="app-header">
@@ -42,6 +58,18 @@ function App() {
           </a>
         </p>
       </footer>
+
+      {showCookieNotice && (
+        <div className="cookie-notice">
+          <p>
+            🍪 Denna webbplats använder cookies för att komma ihåg hur många
+            kattbilder du har tittat på. Inga personuppgifter samlas in.
+          </p>
+          <button onClick={handleAcceptCookies} className="cookie-accept-btn">
+            Förstått
+          </button>
+        </div>
+      )}
     </div>
   );
 }

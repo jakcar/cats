@@ -1,9 +1,20 @@
 import { useState, useEffect } from "react";
+import { setCookie, getCookie } from "./utils/cookies";
 import "./RandomCats.css";
 
 const RandomCats = () => {
   const [cats, setCats] = useState(null);
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState(() => {
+    // Lazy initializer - only runs once
+    const savedCount = getCookie("catPictureCount");
+    if (savedCount) {
+      const count = parseInt(savedCount, 10);
+      if (!isNaN(count) && count > 0) {
+        return count;
+      }
+    }
+    return 1;
+  });
   const [fetchInProgress, setFetchInProgress] = useState(false);
   const [category, setCategory] = useState("all");
 
@@ -17,6 +28,11 @@ const RandomCats = () => {
     { value: "7", label: "Katt i slips/fluga" },
     { value: "9", label: "Katt i dröm" },
   ];
+
+  // Save cat count to cookie whenever value changes
+  useEffect(() => {
+    setCookie("catPictureCount", value.toString());
+  }, [value]);
 
   useEffect(() => {
     setFetchInProgress(true);
@@ -42,6 +58,10 @@ const RandomCats = () => {
     setValue(value + 1);
   };
 
+  const handleNewCat = () => {
+    setValue(value + 1);
+  };
+
   return (
     <div className="random-cats-container">
       <div className="controls">
@@ -60,7 +80,7 @@ const RandomCats = () => {
             ))}
           </select>
         </div>
-        <button onClick={() => setValue(value + 1)} className="random-button">
+        <button onClick={handleNewCat} className="random-button">
           🎲 Mjau!
         </button>
       </div>
